@@ -14,11 +14,26 @@ public class NumberWizard : MonoBehaviour
 		Debug.Log("Pick a number, don't tell me what it is ...");
 		Debug.Log("Lowest number is: " + min);
 		Debug.Log("Highest number is: " + max);
+		Debug.Log("Tell me if your number is higher or lower than 500");
+		Debug.Log("Push Up = higher, Push Down = lower, Enter = correct");
 	}
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+		{
+			Debug.Log("You pressed the up arrow");
+		}
+
+		if (Input.GetKeyDown(KeyCode.DownArrow))
+		{
+			Debug.Log("You pressed the down arrow");
+		}
+
+		if (Input.GetKeyDown(KeyCode.Return))
+		{
+			Debug.Log("You pressed the enter key");
+		}
+	}
 }
