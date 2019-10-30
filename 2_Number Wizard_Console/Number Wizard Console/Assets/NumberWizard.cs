@@ -12,11 +12,10 @@ public class NumberWizard : MonoBehaviour
 	void Start()
     {
 		Debug.Log("Welcome to Number Wizard");
-		Debug.Log("Pick a number, don't tell me what it is ...");
-		Debug.Log("Lowest number is: " + min);
-		Debug.Log("Highest number is: " + max);
+		Debug.Log("Pick a number from " + min + " to " + max + ", don't tell me what it is ...");
 		Debug.Log("Tell me if your number is higher or lower than " + guess);
 		Debug.Log("Push Up = higher, Push Down = lower, Enter = correct");
+		max++;
 	}
 
     // Update is called once per frame
@@ -24,19 +23,19 @@ public class NumberWizard : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
-			Debug.Log("You pressed the up arrow");
 			min = guess;
-			Debug.Log(guess);
+			guess = (max + min) / 2;
+			Debug.Log("Higher ... how about " + guess + "?");
 		}
 		else if (Input.GetKeyDown(KeyCode.DownArrow))
 		{
-			Debug.Log("You pressed the down arrow");
 			max = guess;
-			Debug.Log(guess);
+			guess = (max + min) / 2;
+			Debug.Log("Lower ... how about " + guess + "?");
 		}
 		else if (Input.GetKeyDown(KeyCode.Return))
 		{
-			Debug.Log("You pressed the enter key");
+			Debug.Log(guess + " was correct");
 		}
 	}
 }
